@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+<header th:replace="fragments :: header"></header>
+<form method="post" th:action="@{/students/newStudentForm}">
+    <div class="container">
+        <div class="form-group row center-block">
+            <label class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-xs-4">
+                <input th:field="${student.personalDetails.firstName}" class="form-control">
+            </div>
+            <p class="text-danger" th:errors="${student.personalDetails.firstName}"></p>
+        </div>
+        <div class="form-group row center-block">
+            <label class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-xs-4">
+                <input th:field="${student.personalDetails.lastName}" class="form-control">
+            </div>
+            <div>
+                <p class="text-danger" th:errors="${student.personalDetails.lastName}"></p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Phone Number</label>
+            <div class="col-xs-4">
+                <input th:field="${student.personalDetails.phoneNumber}" class="form-control">
+            </div>
+            <p class="text-danger" th:errors="${student.personalDetails.phoneNumber}"></p>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">E-Mail</label>
+            <div class="col-xs-4">
+                <input th:field="${student.personalDetails.email}" class="form-control">
+            </div>
+            <p class="text-danger" th:errors="${student.personalDetails.email}"></p>
+        </div>
+        <div class="form-group row">
+            <label th:for="gender" class="col-sm-2 col-form-label">Gender</label>
+            <div class="col-xs-4">
+                <select class="form-control" th:field="${student.gender}">
+                    <option value="">Please select ...</option>
+                    <option th:each="gender : ${genders}"
+                            th:value="${gender}"
+                            th:text="${gender.displayName}"
+                    ></option>
+                </select>
+            </div>
+            <p class="text-danger" th:errors="${student.gender}"></p>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Date Of Birth</label>
+            <div class="col-xs-4">
+                <input type="date" class="form-control" th:field="${student.personalDetails.dateOfBirth}"/>
+            </div>
+            <p class="text-danger" th:errors="${student.personalDetails.dateOfBirth}"></p>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">School Year</label>
+            <div class="col-xs-4">
+                <select th:field="${student.schoolYear}" class="form-control">
+                    <option value="">Please select ...</option>
+                    <option value="2020-2021">2020-2021</option>
+                    <option value="2021-2022">2021-2022</option>
+                    <option value="2022-2023">2022-2023</option>
+                </select>
+            </div>
+            <p class="text-danger" th:errors="${student.schoolYear}"></p>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Classes To Register</label>
+            <div class="col-xs-4">
+                <select class="form-control" th:field="${student.classes}">
+                    <option value="">Please select ...</option>
+                    <option th:each="classes : ${classRegistered}"
+                            th:value="${classes.id}"
+                            th:text="${classes.className}">
+                    </option>
+                </select>
+            </div>
+            <p class="text-danger" th:errors="${student.classes}"></p>
+        </div>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <input type="submit" value="Add Student" class="btn btn-success">
+
+            </div>
+            <div class="btn-group mr-2" role="group" aria-label="Second group">
+                <a class="btn btn-info" href="/students">Cancel</a>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

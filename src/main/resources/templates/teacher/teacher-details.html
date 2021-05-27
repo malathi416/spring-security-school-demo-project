@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="container">
+    <table class="table table-bordered table-striped table-responsive-lg">
+        <tr>
+            <th>First Name</th>
+            <td th:text="${teacher.personalDetails.firstName}"></td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td th:text="${teacher.personalDetails.lastName}"></td>
+        </tr>
+        <tr>
+            <th>PhoneNumber</th>
+            <td th:text="${teacher.personalDetails.phoneNumber}"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td th:text="${teacher.personalDetails.email}"></td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td th:text="${teacher.gender}"></td>
+        </tr>
+        <tr>
+            <th>DateOfBirth</th>
+            <td th:text="${teacher.personalDetails.dateOfBirth}"></td>
+        </tr>
+        <tr>
+            <th>ClassesToTeach</th>
+            <td th:text="${teacher.classes}"></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <a class="btn btn-info" href="/teachers">Back To Teachers List</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title>School Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+<body>
+<div th:fragment="header">
+    <div class="bg-secondary">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="row justify-content-center">
+                <div class="text-info">
+                    <h1 class="heading-section">Parkway School Management</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/home}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/classes}">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/teachers}">Teacher</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/students}">Student</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <a class="nav-link" th:href="@{/logout}"> LogOut</a>
+            </ul>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <h3 th:text="${title}" class="text-info"></h3></div>
+</div>
+</body>
+</html>

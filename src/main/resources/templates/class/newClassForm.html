@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" th:action="@{/classes/newClassForm}">
+                <div class="form-group row center-block">
+                    <label class="col-sm-4 col-form-label">Class Name</label>
+                    <div class="col-xs-4">
+                        <input th:field="${classes.className}" class="form-control">
+                    </div>
+                    <p class="text-danger" th:errors="${classes.className}"></p>
+                </div>
+                <!--                <div class="form-group">-->
+                <!--                    <input type="submit" value="Add Class" class="btn btn-success">-->
+                <!--                </div>-->
+                <!--                <div>-->
+                <!--                    <a class="nav-item"><a class="nav-link" href="/classes">Cancel</a></a>-->
+                <!--                </div>-->
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <input type="submit" value="Add Class" class="btn btn-success">
+
+                    </div>
+                    <div class="btn-group mr-2" role="group" aria-label="Second group">
+                        <a class="btn btn-info" href="/classes">Cancel</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

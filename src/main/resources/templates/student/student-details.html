@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="container">
+    <table class="table table-bordered table-striped table-responsive-lg">
+        <tr>
+            <th>First Name</th>
+            <td th:text="${student.personalDetails.firstName}"></td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td th:text="${student.personalDetails.lastName}"></td>
+        </tr>
+        <tr>
+            <th>PhoneNumber</th>
+            <td th:text="${student.personalDetails.phoneNumber}"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td th:text="${student.personalDetails.email}"></td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td th:text="${student.gender}"></td>
+        </tr>
+        <tr>
+            <th>DateOfBirth</th>
+            <td th:text="${student.personalDetails.dateOfBirth}"></td>
+        </tr>
+        <tr>
+            <th>Class Registered</th>
+            <td th:text="${student.classes}"></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <a class="btn btn-info" href="/students">Back To Students List </a>
+</div>
+
+</body>
+</html>

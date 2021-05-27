@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="container">
+    <a th:href="@{/classes/newClassForm}" class="btn btn-primary btn-sm mb-3">Add class</a>
+    <div class="alert alert-danger" role="alert" th:text="${success}" th:if="${success}"></div>
+    <!--    <div class="alert alert-primary" role="alert" th:text="${message}" th:if="${message}"></div>-->
+    <table class="table table-bordered  table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Class Names</th>
+            <th>Update</th>
+            <!--            <th>Delete</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="class: ${classes}">
+            <td><a th:href="'/classes/detail?classId=' + ${class.id}"
+                   th:text="${class.className}"></a></td>
+
+            <td><a th:href="@{/classes/showFormForUpdate/{id}(id=${class.id})}" class="btn btn-primary">Update</a></td>
+<!--            <td><a th:href="@{/classes/deleteClass/{id}(id=${class.id})}" class="btn btn-danger">Delete</a></td>-->
+
+        </tr>
+        </tbody>
+        <p th:text="${message}"></p>
+    </table>
+</div>
+</body>
+</html>
